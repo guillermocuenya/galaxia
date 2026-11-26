@@ -1,38 +1,43 @@
 # 🪐 Galaxia Matemática
 
-Aventura espacial para aprender matemática de **2.º y 3.er año** (diseño curricular de Córdoba). Cada bloque es un planeta y cada tema, una misión con:
+> Gamified math learning app for secondary school (2nd–3rd year, Córdoba curriculum): theory, interactive simulators, auto-generated practice and arcade games.
 
-- 📖 **Teoría** breve con ejemplos y tips.
-- 🧪 **Simulador** interactivo (balanza de ecuaciones, explorador de cuadriláteros, Pitágoras, trigonometría, gráficos de funciones y más).
-- ✏️ **Práctica** de 10 ejercicios que se generan al azar (nunca se repiten), con corrección y explicación. 6, 8 y 10 aciertos dan 1, 2 y 3 estrellas.
-- 🎮 **Juego**: *Lluvia de asteroides* o *Carrera contrarreloj*. También hay un desafío mixto por planeta.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=white) ![esbuild](https://img.shields.io/badge/esbuild-FFCF00?style=flat-square&logo=esbuild&logoColor=white) ![No dependencies](https://img.shields.io/badge/No%20dependencies-555555?style=flat-square)
 
-Además: experiencia (XP), rangos, 12 logros, sonidos y modo celular. El progreso se guarda en el navegador de cada alumno. No hace falta crear cuentas.
+![Galaxia Matemática](docs/screenshot.png)
 
-**Para el docente:** el botón 🖨️ de cada misión arma una hoja con 12 ejercicios nuevos y, en otra página, sus respuestas.
+## Overview
+Each curriculum block is a **planet** and each topic is a **mission**. Students learn, practice and play without creating accounts; progress is stored locally in the browser. Built for my own 2nd- and 3rd-year students.
 
-## Publicar en Netlify (5 minutos)
-1. Entrá a https://app.netlify.com/drop (con tu cuenta iniciada).
-2. Arrastrá **esta carpeta** (la que tiene `index.html`).
-3. Listo: compartí el enlace o cambiale el nombre en *Project configuration → Change project name*.
+## Key features
+- **8 planets / 35 missions** covering integers, algebra, rationals, geometry, statistics, Pythagoras, trigonometry and linear functions.
+- **Interactive simulators**: equation balance, quadrilateral explorer, Pythagoras, trigonometry, function grapher.
+- **Procedurally generated practice**: 10 random exercises per mission with automatic grading and explanations — never the same set twice.
+- **Games**: *Asteroid Rain* and *Time Trial*, plus a mixed challenge per planet.
+- **Gamification**: XP, ranks, 12 achievements, stars, sound effects, mobile mode.
+- **Teacher tools**: one click prints a worksheet with 12 fresh exercises and a separate answer key.
 
-Para actualizarla: en Netlify → tu sitio → **Deploys** → arrastrá la carpeta nueva.
+## Tech stack
+Vanilla JavaScript (ES modules) bundled with **esbuild** into a single IIFE, plain CSS, no backend. Works offline from `index.html`.
 
-## Probar en tu compu
-Abrí `index.html` con doble clic: funciona sin internet ni servidor (las fuentes necesitan conexión, pero la app anda igual).
+## Run locally
+```bash
+# open index.html directly, or:
+python3 -m http.server 8080
+```
+Rebuild the bundle after editing `js/`:
+```bash
+npx esbuild js/app.js --bundle --format=iife --minify --outfile=js/galaxia.bundle.js
+```
 
-## Para modificar el código
-El código fuente está en `js/` (app.js, content2.js, content3.js, widgets.js, util.js). La página carga `js/galaxia.bundle.js`, que es todo eso junto. Después de editar, regeneralo con:
-`npx esbuild js/app.js --bundle --format=iife --minify --outfile=js/galaxia.bundle.js`
+## Deploy
+Static site — Netlify Drop, Netlify from Git, or GitHub Pages. `netlify.toml` included.
 
-## Contenidos
-| Año | Planeta | Misiones |
-|---|---|---|
-| 2.º | Zeta (enteros) | Comparar y ubicar · Operaciones y propiedades · Cálculos combinados |
-| 2.º | Equis (álgebra) | Fórmulas para contar · Fórmulas equivalentes · Ecuaciones ax+b=cx+d · Problemas y tipos de solución |
-| 2.º | Fracción (racionales) | Representaciones · Orden, discretitud y densidad · Operaciones y propiedades · Estrategias con decimales |
-| 2.º | Polígono (geometría) | Clasificar cuadriláteros · Argumentar · Construir con datos · Instrumentos y graficadores · Ángulos y diagonales · Perímetros y áreas |
-| 2.º | Datos (estadística) | Leer gráficos · Frecuencias · Elegir gráficos · Media y moda |
-| 3.º | Potencia (racionales) | Operaciones y potencias · Radicación |
-| 3.º | Pitágoras (geometría) | Pitágoras · Trigonometría · Thales · Reconocer cuerpos · Áreas · Volúmenes |
-| 3.º | Función (álgebra y funciones) | Proporcionalidad · Análisis de gráficos · Parámetros de y=ax+b · Gráficos lineales · Producir fórmulas · Ecuaciones |
+📘 Detailed guide (Spanish): [docs/GUIA.md](docs/GUIA.md)
+
+---
+
+## Author
+
+**Guillermo Cuenya** — Senior QA Automation Engineer / SDET · Telecommunications Engineer  
+[LinkedIn](https://www.linkedin.com/in/guillermoadriancuenya/) · [GitHub](https://github.com/gcuenya1)
