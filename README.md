@@ -40,4 +40,4 @@ Static site — Netlify Drop, Netlify from Git, or GitHub Pages. `netlify.toml` 
 ## Author
 
 **Guillermo Cuenya** — Senior QA Automation Engineer / SDET · Telecommunications Engineer  
-[LinkedIn](https://www.linkedin.com/in/guillermoadriancuenya/) · [GitHub](https://github.com/gcuenya1)
+[LinkedIn](https://www.linkedin.com/in/guillermoadriancuenya/) · [GitHub](https://github.com/guillermocuenya) · [Portfolio](https://guillermocuenya.github.io)
